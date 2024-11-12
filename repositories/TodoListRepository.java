@@ -1,8 +1,8 @@
 package repositories;
 
-import Entities.TodoList;
+import entities.TodoList;
 
-public interface TodoListRespository {
+public interface TodoListRepository {
     TodoList[] getAll();
     void add(TodoList todoList);
     Boolean remove(Integer id);

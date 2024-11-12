@@ -1,4 +1,4 @@
-package Entities;
+package entities;
 
 public class TodoList {
     private String todo;
@@ -11,7 +11,7 @@ public class TodoList {
         return todo;
     }
 
-    public void setTodo(String todo) {
+    public void setTodo(final String todo) {
         this.todo = todo;
     }
 
@@ -19,7 +19,7 @@ public class TodoList {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 }

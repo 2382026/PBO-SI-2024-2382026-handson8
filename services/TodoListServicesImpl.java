@@ -1,18 +1,18 @@
 package services;
 
-import Entities.TodoList;
-import repositories.TodoListRespository;
+import entities.TodoList;
+import repositories.TodoListRepository;
 
 public class TodoListServicesImpl implements TodoListServices{
-    private  final TodoListRespository todoListRespository;
+    private final TodoListRepository todoListRepository;
 
-    public TodoListServicesImpl(final TodoListRespository todoListRespository) {
-        this.todoListRespository = todoListRespository;
+    public TodoListServicesImpl(TodoListRepository todoListRepository) {
+        this.todoListRepository = todoListRepository;
     }
 
     @Override
     public TodoList[] getTodoList() {
-        return todoListRespository.getAll();
+        return todoListRepository.getAll();
     }
 
     @Override
@@ -23,12 +23,12 @@ public class TodoListServicesImpl implements TodoListServices{
         }
         TodoList todoList = new TodoList();
         todoList.setTodo(todo);
-        todoListRespository.add(todoList);
+        todoListRepository.add(todoList);
     }
 
     @Override
     public Boolean removeTodoList(final Integer number) {
-        return todoListRespository.remove(number);
+        return todoListRepository.remove(number);
     }
 
     @Override
@@ -36,6 +36,6 @@ public class TodoListServicesImpl implements TodoListServices{
         TodoList todoList = new TodoList();
         todoList.setTodo(todo);
         todoList.setId(number);
-        return todoListRespository.edit(todoList);
+        return todoListRepository.edit(todoList);
     }
 }

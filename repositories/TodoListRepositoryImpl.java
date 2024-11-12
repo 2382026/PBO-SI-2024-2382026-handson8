@@ -1,8 +1,8 @@
 package repositories;
 
-import Entities.TodoList;
+import entities.TodoList;
 
-public class TodoListRepositoryImpl implements TodoListRespository{
+public class TodoListRepositoryImpl implements TodoListRepository{
     public static TodoList[] todos = new TodoList[10];
 
     @Override
