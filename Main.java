@@ -1,7 +1,6 @@
 import config.Database;
 import repositories.TodoListRepository;
 import repositories.TodoListRepositoryDbImpl;
-import repositories.TodoListRepositoryImpl;
 import services.TodoListServices;
 import services.TodoListServicesImpl;
 import views.TodoListTerminalViews;
@@ -15,7 +14,6 @@ public class Main {
         database.setup();
 
         TodoListRepository todoListRepository = new TodoListRepositoryDbImpl(database);
-        TodoListRepository todoListRepository1 = new TodoListRepositoryImpl();
         TodoListServices todoListServices = new TodoListServicesImpl(todoListRepository);
         TodoListViews todoListViews = new TodoListTerminalViews(todoListServices);
         todoListViews.run();
